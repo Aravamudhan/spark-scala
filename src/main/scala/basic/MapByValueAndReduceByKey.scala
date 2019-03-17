@@ -12,8 +12,8 @@ object MapByValueAndReduceByKey {
 //    val arrayMappedValue = array.mapValues(value => (value,1))
 //    arrayMappedValue.foreach(println)
 
-    val arrayByReducedKey=array.reduceByKey((key1,key2)=>{
-      (key1+key2)
+    val arrayByReducedKey=array.reduceByKey((accumulatedValue,currentValue)=>{
+      (accumulatedValue+currentValue)
     })
     println("Reduced by key")
     arrayByReducedKey.foreach(println)
